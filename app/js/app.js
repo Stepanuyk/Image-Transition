@@ -1,27 +1,30 @@
+import $ from 'jquery';
+import {TimelineMax} from 'gsap';
+
 $(document).ready(function () {
 
-    let cols = 45;
+    let cols = 44;
     let rows = 45;
     let xw, xh, delay;
     let canvas = $('#canvas')[0];
     let context = canvas.getContext('2d');
     let img1 = $('#img1')[0];
-    let img2 = $('#img2')[0];
+    let img2 = $('#img2')[0]; 
     let newcanvas = $("<canvas></canvas>")[0];
     let newcontext = newcanvas.getContext('2d');
     let state = {
-        pos: 0
-    };
-
-
-    $('body').click(function (e) {
+        pos: 15  
+    };  
+ 
+   
+    $('body').click(function (e) { 
         let tl = new TimelineMax();
         if (state.pos === 0) {
             tl.to(state, 1, {
                 pos: 2
             });
         } else {
-            tl.to(state, 1, {
+            tl.to(state, 1, { 
                 pos: 0
             });
         }
@@ -93,3 +96,5 @@ $(document).ready(function () {
 
 
 });
+
+

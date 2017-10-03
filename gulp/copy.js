@@ -20,6 +20,6 @@ gulp.task('copy-html', function() {
       .pipe(gulp.dest('dist/fonts'));
   });
 
-gulp.task('copy', ['copy-normalize-css', 'copy-fonts'], function() {
+gulp.task('copy', gulp.series('copy-normalize-css', 'copy-fonts', function() {
 
-  });
+  }));
